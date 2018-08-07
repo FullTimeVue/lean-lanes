@@ -1,8 +1,7 @@
 <template>
   <Form class="login">
-    <span class="login__left">Lean</span>
-    <logo centered class="login__logo"/>
-    <span class="login__right">Lanes</span>
+    <logo centered inline small class="login__logo"/>
+    <span class="login__title">Lean Lanes</span>
 
     <FormItem prop="email">
       <input
@@ -65,18 +64,13 @@ export default Vue.extend({
   &__logo
     margin: 2em auto
 
-  &__left,
-  &__right
-    position: absolute
-    top: 2em
+  &__title
+    position: relative;
+    top: -0.5em;
+    left: 0.5em;
+    text-transform: uppercase;
     font-size: 2.8em
-    text-shadow: 2px 1px 2px #888
-
-  &__left
-    left: 1em
-
-  &__right
-    right: 1em
+    font-weight: 300
 
   &__email,
   &__password
