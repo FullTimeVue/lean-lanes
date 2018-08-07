@@ -11,16 +11,29 @@ export default {
     centered: {
       type: Boolean,
       default: false
+    },
+
+    inline: {
+      type: Boolean,
+      default: false
+    },
+
+    small: {
+      type: Boolean,
+      default: false
     }
   },
 
   computed: {
     classes() {
       const klass = 'logo'
+      let klasses = ''
 
-      if (this.centered) {
-        return `${klass} ${klass}--centered`
-      }
+      if (this.centered) klasses += ` ${klass}--centered`
+      if (this.inline) klasses += ` ${klass}--inline`
+      if (this.small) klasses += ` ${klass}--small`
+
+      return `${klass}${klasses}`
     }
   }
 }
@@ -28,9 +41,18 @@ export default {
 
 <style lang="sass" scoped>
 .logo
-  &--centered
-    text-align: center
+  $self: &
 
   &__image
     width: 10em
+
+  &--centered
+    text-align: center
+
+  &--inline
+    display: inline-block
+
+  &--small
+    #{$self}__image
+      width: 6em
 </style>
