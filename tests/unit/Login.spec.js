@@ -11,7 +11,12 @@ describe('Login.vue', () => {
   })
 
   it('renders login form', () => {
-    const el = wrapper.find('.login')
+    const el = wrapper.find('.login__submit')
     expect(el.text()).toMatch('Login')
+  })
+
+  it('login form title presents', () => {
+    const el = wrapper.find('.login__title')
+    expect(el.text()).toMatch('Lean Lanes')
   })
 })
