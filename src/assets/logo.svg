@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 400" width="460" height="400">
+	<defs>
+		<linearGradient id="grd1" gradientUnits="userSpaceOnUse"  x1="231.673" y1="375.165" x2="231.673" y2="40.835">
+			<stop offset="0" stop-color="#b2194f"  />
+			<stop offset="1" stop-color="#0751e3"  />
+		</linearGradient>
+		<linearGradient id="grd2" gradientUnits="userSpaceOnUse"  x1="134.089" y1="386.715" x2="134.089" y2="29.285">
+			<stop offset="0" stop-color="#c32b61"  />
+			<stop offset="1" stop-color="#ff594b"  />
+		</linearGradient>
+		<linearGradient id="grd3" gradientUnits="userSpaceOnUse"  x1="324.988" y1="386.981" x2="324.988" y2="29.019">
+			<stop offset="0" stop-color="#f349fd"  />
+			<stop offset="1" stop-color="#0195ff"  />
+		</linearGradient>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: url(#grd1) } 
+		.shp1 { fill: url(#grd2) } 
+		.shp2 { fill: url(#grd3) } 
+	</style>
+	<g id="Logo">
+		<path id="1" class="shp0" d="M323.16,49.82c-32.09,-18.49 -73.12,-7.52 -91.65,24.51l-115.88,200.36c-18.53,32.03 -7.53,72.99 24.56,91.49c32.09,18.49 73.12,7.52 91.65,-24.51l115.88,-200.36c18.53,-32.03 7.53,-72.99 -24.56,-91.49z" />
+		<path id="2" class="shp1" d="M86.73,31.57c-35.79,9.57 -57.03,46.3 -47.44,82.02l59.98,223.48c9.59,35.73 46.38,56.93 82.17,47.36c35.79,-9.57 57.03,-46.3 47.44,-82.02l-59.98,-223.48c-9.59,-35.73 -46.38,-56.93 -82.17,-47.36z" />
+		<path id="3" class="shp2" d="M277.69,31.31c-35.75,9.59 -56.96,46.37 -47.38,82.15l59.91,223.81c9.58,35.78 46.32,57.01 82.07,47.43c35.75,-9.59 56.96,-46.37 47.38,-82.15l-59.91,-223.81c-9.58,-35.78 -46.32,-57.01 -82.07,-47.43z" />
+	</g>
+</svg>

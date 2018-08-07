@@ -5,6 +5,9 @@ module.exports = {
     'json',
     'vue'
   ],
+  setupFiles: [
+    './tests/jest.setup.js'
+  ],
   transform: {
     '^.+\\.vue$': 'vue-jest',
     '.+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
