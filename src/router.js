@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import { LoadingBar } from 'iview'
 import Home from './views/Home.vue'
 
 Vue.use(Router)
 
-export default new Router({
+const isLoginPage = (route) => String(route).toLowerCase() === 'login'
+
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
@@ -13,6 +16,7 @@ export default new Router({
       name: 'home',
       component: Home
     },
+
     {
       path: '/about',
       name: 'about',
@@ -29,3 +33,27 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  const token = localStorage.getItem('token')
+  let params = {}
+
+  LoadingBar.start()
+
+  // Order of ternaries is important
+  // because if session token present
+  // then we unset params and let router
+  // to transition further otherwise
+  // redirection params will take place
+  params = isLoginPage(to.name) ? {} : { name: 'login' }
+  params = token ? {} : params
+
+  next(params)
+})
+
+router.afterEach((to, from, next) => { // eslint-disable-line no-unused-vars
+  LoadingBar.finish()
+  window.scrollTo(0, 0)
+})
+
+export default router
