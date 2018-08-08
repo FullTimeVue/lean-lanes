@@ -19,12 +19,20 @@
         v-model="loginInfo.password"/>
     </FormItem>
 
-    <Button type="primary" html-type="submit" size="large" class="login__submit">Login</Button>
+    <Button
+      type="primary" html-type="submit"
+      size="large" class="login__submit"
+      @click="login">
+
+      Login
+
+    </Button>
   </Form>
 </template>
 
 <script>
 import Vue from 'vue'
+import { mapActions } from 'vuex'
 
 export default Vue.extend({
   name: 'login',
@@ -36,6 +44,10 @@ export default Vue.extend({
         password: ''
       }
     }
+  },
+
+  methods: {
+    ...mapActions(['login'])
   },
 
   mounted() {
