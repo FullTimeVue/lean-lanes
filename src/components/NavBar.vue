@@ -32,6 +32,7 @@ export default {
   border-radius: 0.2em
   box-shadow: 0 0 0.2em #ddd
   padding: 0.2em 0.8em 0.2em 0.2em
+  z-index: 10
 
   &__link
     display: block
