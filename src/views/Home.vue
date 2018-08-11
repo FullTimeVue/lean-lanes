@@ -2,7 +2,7 @@
   <div class="home">
     <nav-bar/>
     <account-menu :user="user"/>
-    {{boards}}|{{user}}
+    <board-list :boards="boards"/>
   </div>
 </template>
 

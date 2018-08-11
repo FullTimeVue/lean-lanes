@@ -13,17 +13,19 @@ export default {
     },
 
     boards: {
-      boards: [
-        {
-          id: 'id-1',
-          name: 'Random Board'
-        },
+      state: {
+        boards: [
+          {
+            id: 'id-1',
+            name: 'Random Board'
+          },
 
-        {
-          id: 'id-2',
-          name: 'Awesome Board'
-        }
-      ]
+          {
+            id: 'id-2',
+            name: 'Awesome Board'
+          }
+        ]
+      }
     }
   }
 }
