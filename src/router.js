@@ -10,6 +10,7 @@ const isLoginPage = (route) => String(route).toLowerCase() === 'login'
 const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
+
   routes: [
     {
       path: '/',
@@ -47,6 +48,13 @@ router.beforeEach((to, from, next) => {
   // redirection params will take place
   params = isLoginPage(to.name) ? {} : { name: 'login' }
   params = token ? {} : params
+
+  // Finally check if we already
+  // authenticated and in login page
+  // and if so then redirect to homepage
+  if (token && isLoginPage(to.name)) {
+    params = ({name: 'home'})
+  }
 
   next(params)
 })
