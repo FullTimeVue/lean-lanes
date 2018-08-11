@@ -1,6 +1,7 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
 
+import storeStubs from '../stubs/store'
 import i18n from '@/locale'
 import Home from '@/views/Home.vue'
 
@@ -10,10 +11,14 @@ localVue.use(Vuex)
 
 describe('Home.vue', () => {
   let wrapper
+  let store
 
   beforeEach(() => {
+    store = new Vuex.Store(storeStubs)
+
     wrapper = mount(Home, {
       i18n,
+      store,
       localVue,
       stubs: ['router-link']
     })
@@ -21,5 +26,9 @@ describe('Home.vue', () => {
 
   it('renders home page with navigation bar', () => {
     expect(wrapper.contains('.home > .nav')).toBe(true)
+  })
+
+  it('renders all available boards', () => {
+
   })
 })

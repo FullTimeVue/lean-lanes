@@ -1,12 +1,21 @@
 <template>
   <div class="home">
     <nav-bar/>
-    <img src="../assets/logo.png">
+    <account-menu :user="user"/>
+    {{boards}}|{{user}}
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
-  name: 'home'
+  name: 'home',
+  computed: {
+    ...mapState({
+      user: state => state.auth.user,
+      boards: state => state.boards.boards
+    })
+  }
 }
 </script>

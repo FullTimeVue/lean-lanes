@@ -1,11 +1,11 @@
 export default {
   user: state => state.user,
 
-  isAdmin({ auth }) {
-    if (auth.user) {
-      return auth.user.is_superuser
+  isAdmin({ user }) {
+    const anonymous = {
+      is_superuser: false
     }
 
-    return false
+    return (user || anonymous).is_superuser
   }
 }
