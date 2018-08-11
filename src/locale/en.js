@@ -7,5 +7,9 @@ export default {
     login: 'Login',
     password: 'Password',
     email: 'E-mail'
+  },
+
+  boards: {
+    myBoards: 'My Boards'
   }
 }
