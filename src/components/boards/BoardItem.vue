@@ -22,7 +22,10 @@ export default {
 
   computed: {
     cardColor() {
-      return `background: ${colorFromText(this.board.name)}`
+      return `
+        background: ${colorFromText(this.board.name)};
+        border: 1px solid ${colorFromText(this.board.name, 100)};
+      `
     }
   }
 }
