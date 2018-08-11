@@ -1,6 +1,7 @@
 import { mount, createLocalVue } from '@vue/test-utils'
 import Vuex from 'vuex'
 
+import i18n from '@/locale'
 import Login from '@/views/Login.vue'
 
 const localVue = createLocalVue()
@@ -28,6 +29,7 @@ describe('Login.vue', () => {
 
     wrapper = mount(Login, {
       store,
+      i18n,
       localVue
     })
   })
