@@ -1,6 +1,5 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { createLocalVue, mount } from '@vue/test-utils'
 import Vuex from 'vuex'
-
 import i18n from '@/locale'
 import NavBar from '@/components/NavBar.vue'
 
@@ -14,7 +13,8 @@ describe('NavBar.vue', () => {
   beforeEach(() => {
     wrapper = mount(NavBar, {
       i18n,
-      localVue
+      localVue,
+      stubs: ['router-link']
     })
   })
 
@@ -23,10 +23,10 @@ describe('NavBar.vue', () => {
   })
 
   it('renders navigation bar with logo', () => {
-    expect(wrapper.contains('.nav__logo')).toBe(true)
+    expect(wrapper.contains('.nav .nav__link__logo')).toBe(true)
   })
 
-  it('renders navigation bar with menu items', () => {
-    expect(wrapper.contains('.nav__menu')).toBe(true)
+  it('navigation uses tiny logo', () => {
+    expect(wrapper.contains('.logo--tiny')).toBe(true)
   })
 })

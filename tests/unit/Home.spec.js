@@ -14,7 +14,8 @@ describe('Home.vue', () => {
   beforeEach(() => {
     wrapper = mount(Home, {
       i18n,
-      localVue
+      localVue,
+      stubs: ['router-link']
     })
   })
 
