@@ -1,11 +1,11 @@
 <template>
   <Form class="login">
     <logo centered inline small class="login__logo"/>
-    <span class="login__title">Lean Lanes</span>
+    <span class="login__title">{{ $t('app.name') }}</span>
 
     <FormItem prop="email">
       <input
-        placeholder="Email"
+        :placeholder="$t('auth.email')"
         type="text"
         class="login__email"
         v-model="loginInfo.email"/>
@@ -13,7 +13,7 @@
 
     <FormItem prop="password">
       <input
-        placeholder="Password"
+        :placeholder="$t('auth.password')"
         type="password"
         class="login__password"
         v-model="loginInfo.password"/>
@@ -22,9 +22,9 @@
     <Button
       type="primary" html-type="submit"
       size="large" class="login__submit"
-      @click="login">
+      @click.prevent="login(loginSuccess)">
 
-      Login
+      {{ $t('auth.login') }}
 
     </Button>
   </Form>
@@ -47,6 +47,10 @@ export default Vue.extend({
   },
 
   methods: {
+    loginSuccess() {
+      this.$router.push({name: 'home'})
+    },
+
     ...mapActions(['login'])
   },
 
