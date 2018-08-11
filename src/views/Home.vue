@@ -28,4 +28,5 @@ export default {
   &__content
     width: 80%
     margin: 8em auto
+    z-index: 1
 </style>
