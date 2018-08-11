@@ -2,7 +2,10 @@
   <div class="home">
     <nav-bar/>
     <account-menu :user="user"/>
-    <board-list :boards="boards"/>
+
+    <div class="home__content">
+      <board-list :boards="boards"/>
+    </div>
   </div>
 </template>
 
@@ -19,3 +22,10 @@ export default {
   }
 }
 </script>
+
+<style lang="sass" scoped>
+.home
+  &__content
+    width: 80%
+    margin: 8em auto
+</style>
