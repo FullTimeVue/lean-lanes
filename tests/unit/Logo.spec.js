@@ -4,19 +4,27 @@ import Logo from '@/components/Logo.vue'
 describe('Logo.vue', () => {
   it('renders logo', () => {
     const wrapper = shallowMount(Logo)
-    const el = wrapper.find('.logo')
-    expect(el.is('div')).toBe(true)
+    expect(wrapper.contains('.logo')).toBe(true)
   })
 
   it('renders small logo', () => {
     const wrapper = shallowMount(Logo, {
       propsData: {
-        small: true
+        size: 'small'
       }
     })
 
-    const el = wrapper.find('.logo--small')
-    expect(el.is('div')).toBe(true)
+    expect(wrapper.contains('.logo--small')).toBe(true)
+  })
+
+  it('renders normal logo if size is unknown', () => {
+    const wrapper = shallowMount(Logo, {
+      propsData: {
+        size: 'super-size'
+      }
+    })
+
+    expect(wrapper.contains('.logo--normal')).toBe(true)
   })
 
   it('renders inline logo', () => {
@@ -26,8 +34,7 @@ describe('Logo.vue', () => {
       }
     })
 
-    const el = wrapper.find('.logo--inline')
-    expect(el.is('div')).toBe(true)
+    expect(wrapper.contains('.logo--inline')).toBe(true)
   })
 
   it('renders centered logo', () => {
@@ -37,21 +44,20 @@ describe('Logo.vue', () => {
       }
     })
 
-    const el = wrapper.find('.logo--centered')
-    expect(el.is('div')).toBe(true)
+    expect(wrapper.contains('.logo--centered')).toBe(true)
   })
 
   it('renders logo with all modifiers', () => {
     const wrapper = shallowMount(Logo, {
       propsData: {
-        small: true,
+        size: 'small',
         centered: true,
         inline: true
       }
     })
 
-    expect(wrapper.find('.logo--small').is('div')).toBe(true)
-    expect(wrapper.find('.logo--centered').is('div')).toBe(true)
-    expect(wrapper.find('.logo--inline').is('div')).toBe(true)
+    expect(wrapper.contains('.logo--small')).toBe(true)
+    expect(wrapper.contains('.logo--centered')).toBe(true)
+    expect(wrapper.contains('.logo--inline')).toBe(true)
   })
 })

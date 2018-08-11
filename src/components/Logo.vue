@@ -5,6 +5,14 @@
 </template>
 
 <script>
+const SIZES = {
+  normal: 'normal',
+  small: 'small',
+  tiny: 'tiny'
+}
+
+const NORMAL = 'normal'
+
 export default {
   name: 'logo',
   props: {
@@ -18,7 +26,17 @@ export default {
       default: false
     },
 
+    size: {
+      type: String,
+      default: NORMAL
+    },
+
     small: {
+      type: Boolean,
+      default: false
+    },
+
+    tiny: {
       type: Boolean,
       default: false
     }
@@ -28,10 +46,11 @@ export default {
     classes() {
       const klass = 'logo'
       let klasses = ''
+      const size = SIZES[this.size] || NORMAL
 
       if (this.centered) klasses += ` ${klass}--centered`
       if (this.inline) klasses += ` ${klass}--inline`
-      if (this.small) klasses += ` ${klass}--small`
+      klasses += ` ${klass}--${size}`
 
       return `${klass}${klasses}`
     }
@@ -55,4 +74,8 @@ export default {
   &--small
     #{$self}__image
       width: 6em
+
+  &--tiny
+    #{$self}__image
+      width: 3.8em
 </style>

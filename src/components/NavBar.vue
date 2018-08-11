@@ -1,8 +1,14 @@
 <template>
   <nav class="nav">
-    <div class="nav__menu">
+    <slot name="logo">
+      <logo centered inline size="tiny" class="nav__logo"/>
+    </slot>
 
-    </div>
+    <slot name="menu">
+      <div class="nav__menu">
+        
+      </div>
+    </slot>
   </nav>
 </template>
 

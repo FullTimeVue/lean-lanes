@@ -22,6 +22,10 @@ describe('NavBar.vue', () => {
     expect(wrapper.contains('.nav')).toBe(true)
   })
 
+  it('renders navigation bar with logo', () => {
+    expect(wrapper.contains('.nav__logo')).toBe(true)
+  })
+
   it('renders navigation bar with menu items', () => {
     expect(wrapper.contains('.nav__menu')).toBe(true)
   })
