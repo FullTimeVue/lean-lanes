@@ -1,5 +1,4 @@
-import { mount, createLocalVue } from '@vue/test-utils'
-
+import { shallowMount, createLocalVue } from '@vue/test-utils'
 import storeStubs from '../stubs/store'
 import i18n from '@/locale'
 import BoardItem from '@/components/boards/BoardItem.vue'
@@ -10,7 +9,7 @@ describe('BoardItem.vue', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = mount(BoardItem, {
+    wrapper = shallowMount(BoardItem, {
       i18n,
       localVue,
       propsData: {
