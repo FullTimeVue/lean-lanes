@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { colorFromText } from '@/helpers/colors'
+import { colorBoxCSS } from '@/helpers/colors'
 
 export default {
   name: 'board-item',
@@ -22,10 +22,7 @@ export default {
 
   computed: {
     cardColor() {
-      return `
-        background: ${colorFromText(this.board.name, 210)};
-        border: 1px solid ${colorFromText(this.board.name, 100)};
-      `
+      return colorBoxCSS(this.board.name)
     }
   }
 }

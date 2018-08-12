@@ -9,3 +9,10 @@ export function colorFromText(toColor, hue = 200) {
 
   return color.toRgbString()
 }
+
+export function colorBoxCSS(textToColor, bgHue = 210, borderHue = 100) {
+  return `
+    background: ${colorFromText(textToColor, bgHue)};
+    border: 1px solid ${colorFromText(textToColor, borderHue)};
+  `
+}
