@@ -1,6 +1,15 @@
 <template>
   <div class="account-menu" >
-    <Avatar :src="user.avatar" size="large"/>
+    <Dropdown>
+      <a href="javascript:void(0)">
+        <Avatar :src="user.avatar" size="large"/>
+      </a>
+      <DropdownMenu slot="list">
+        <DropdownItem>My Profile</DropdownItem>
+        <DropdownItem>Settings</DropdownItem>
+        <DropdownItem>Log out</DropdownItem>
+      </DropdownMenu>
+    </Dropdown>
   </div>
 </template>
 
@@ -20,7 +29,7 @@ export default {
 .account-menu
   position: fixed
   top: 1em
-  right: 1em
+  right: 2.8em
   display: inline-block
   width: 3.7em
   height: 3.7em
