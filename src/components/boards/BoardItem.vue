@@ -1,6 +1,8 @@
 <template>
   <div class="board-item" :style="cardColor">
-    {{ board.name }}
+    <router-link :to="{ name: 'board-detail', params: { boardId: this.board.id } }">
+      {{ board.name }}
+    </router-link>
 
     <div class="board-item__controls">
       <Icon type="ios-star" />

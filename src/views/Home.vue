@@ -1,8 +1,5 @@
 <template>
   <div class="home">
-    <nav-bar/>
-    <account-menu :user="user"/>
-
     <div class="home__content">
       <board-list :boards="boards"/>
     </div>
@@ -16,7 +13,6 @@ export default {
   name: 'home',
   computed: {
     ...mapState({
-      user: state => state.auth.user,
       boards: state => state.boards.boards
     })
   }
@@ -25,8 +21,7 @@ export default {
 
 <style lang="sass" scoped>
 .home
-  &__content
-    width: 80%
-    margin: 8em auto
-    z-index: 1
+  width: 80%
+  margin: 8em auto
+  z-index: 1
 </style>
