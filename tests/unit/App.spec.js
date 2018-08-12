@@ -1,19 +1,20 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { shallowMount, createLocalVue } from '@vue/test-utils'
+import storeStubs from '../stubs/store'
+import Vuex from 'vuex'
 import Router from 'vue-router'
 import App from '@/App.vue'
-import i18n from '@/locale'
 
 const localVue = createLocalVue()
 
 localVue.use(Router)
+localVue.use(Vuex)
 
 describe('App.vue', () => {
-  const router = new Router()
-
-  const wrapper = mount(App, {
-    i18n,
+  const store = new Vuex.Store(storeStubs)
+  const wrapper = shallowMount(App, {
     localVue,
-    router
+    store,
+    stubs: ['router-link']
   })
 
   // Probably it makes no sense to test it this way
