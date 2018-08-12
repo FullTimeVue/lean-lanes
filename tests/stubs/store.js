@@ -1,6 +1,11 @@
 export default {
   modules: {
     auth: {
+      getters: {
+        isAuthenticated: () => (localStorage.getItem('token') !== null),
+        user: state => state.user
+      },
+
       state: {
         user: {
           id: 'user-1',
