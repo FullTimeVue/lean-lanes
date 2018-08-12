@@ -21,6 +21,12 @@ const router = new Router({
     },
 
     {
+      path: '/b/:boardId',
+      name: 'board-detail',
+      component: () => import(/* webpackChunkName: "board-detail" */ './views/boards/BoardDetail.vue')
+    },
+
+    {
       path: '/about',
       name: 'about',
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
