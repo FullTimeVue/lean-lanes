@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import i18n from './locale'
 import registerComponents from '@/helpers/registerComponents'
-import registerDirectives from '@/directives/auto-focus'
+import registerDirectives from '@/directives'
 
 import './registerServiceWorker'
 
