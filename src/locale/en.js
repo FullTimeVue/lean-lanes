@@ -1,6 +1,7 @@
 export default {
   app: {
-    name: 'Lean Lanes'
+    name: 'Lean Lanes',
+    error: 'OOPS! Something went wrong!'
   },
 
   auth: {

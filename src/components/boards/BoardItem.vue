@@ -1,6 +1,6 @@
 <template>
   <div class="board-item" :style="cardColor">
-    <router-link :to="{ name: 'board-detail', params: { boardId: this.board.id } }">
+    <router-link :to="{ name: 'board-index', params: { boardId: this.board.id } }">
       {{ board.name }}
     </router-link>
 

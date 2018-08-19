@@ -22,8 +22,9 @@ const router = new Router({
 
     {
       path: '/b/:boardId',
-      name: 'board-detail',
-      component: () => import(/* webpackChunkName: "board-detail" */ './views/boards/BoardDetail.vue')
+      name: 'board-index',
+      component: () => import(/* webpackChunkName: "board-index" */ './views/boards/BoardIndex.vue'),
+      props: true
     },
 
     {
