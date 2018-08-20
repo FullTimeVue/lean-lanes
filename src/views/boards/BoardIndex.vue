@@ -1,13 +1,17 @@
 <template>
   <div class="board-index">
     <div class="board-index__content">
-      lanes {{ boardId }} {{ lanes }}
+      <lane
+        v-for="lane in lanes"
+        :lane="lane"
+        :key="lane.id"/>
     </div>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
+import lane from '@/components/lanes/Lane.vue'
 
 export default {
   name: 'board-index',
@@ -18,15 +22,19 @@ export default {
     }
   },
 
+  components: {
+    lane
+  },
+
   computed: {
     lanes() {
-      return this.lanes.filter(lane => lane.board === this.boardId)
+      return this.allLanes.filter(lane => lane.board === this.boardId)
     },
 
     ...mapState({
       user: state => state.auth.user,
       boards: state => state.boards.boards,
-      lanes: state => state.lanes.lanes
+      allLanes: state => state.lanes.lanes
     })
   }
 }
