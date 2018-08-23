@@ -1,18 +1,30 @@
 <template>
-  <div class="lane">
-    <h1 class="lane__title">{{ lane.name }}</h1>
-    <div class="lane__cards">
-      <Card
-        v-for="card in lane.cards"
-        :key="card.id"
-        class="lane__cards__card"
-        style="width:320px">
+      <div class="lane">
+        <h1 class="lane__title">{{ lane.name }}</h1>
 
-        {{ card.title }}
+        <div class="lane__cards">
+          <Row
+            v-for="card in lane.cards"
+            :key="card.id"
+            style="width: 360px; display: inline-block">
+            <i-col span="22">
 
-      </Card>
-    </div>
-  </div>
+              <Card
+                class="lane__cards__card"
+                style="width:320px">
+
+                {{ card.title }}
+
+              </Card>
+
+            </i-col>
+
+            <i-col span="2">
+              +
+            </i-col>
+          </Row>
+        </div>
+      </div>
 </template>
 
 <script>
